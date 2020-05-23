@@ -1,0 +1,11 @@
+html, body{
+  font-family: "Impact", "Arial Black", "Arial";
+  height:100%;
+  width:100%;
+}
+.container-fluid{
+  height:100%;
+}
+.display-2{
+  font-family: 'Pacifico', cursive;
+}
