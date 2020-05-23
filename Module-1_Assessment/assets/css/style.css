@@ -1,0 +1,17 @@
+html, body{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+.navbar, .container-fluid, .conatiner{
+    height:10%;
+    margin-top:-10px;
+}
+.bgColorWrapper{
+    height:84%;
+    background-color: #FFFCF8;
+}
+img{
+    height:150px;
+    width:150px;
+}
