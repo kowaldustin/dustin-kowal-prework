@@ -2,6 +2,10 @@ html, body{
     height:100%;
     width:100%;
     overflow:hidden;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+p, label{
+    color:#777777;
 }
 .navbar, .container-fluid, .conatiner{
     height:10%;
@@ -9,7 +13,8 @@ html, body{
 }
 .bgColorWrapper{
     height:84%;
-    background-color: #FFFCF8;
+    width:100%;
+    background: #FFFCF8 url("assets/images/triangle-mosaic.png");
 }
 img{
     height:150px;
@@ -17,10 +22,26 @@ img{
 }
 .portImgText{
     font-size:12px;
-    background-color: #4aaaa5;
     width:63%;
     height:20%;
     margin-left:12%;
     position: absolute;
     top:70%;
+}
+.navbar-brand, .btn, .portImgText{
+    background-color: #4aaaa5;
+}
+.pageHeader{
+    color:#4aaaa5;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
+.footer-copyright{
+    background-color: #666666;
+}
+.container{
+    border-color:#dddddd;
+    width:960px;
+}
+.container-fluid{
+    border-color:#cccccc;
 }
