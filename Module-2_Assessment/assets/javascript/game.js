@@ -1,69 +1,58 @@
-document.addEventListener('keyup', playHangman);
-const possibleWords = [test, testy, tester];
+var currentWordPara = document.getElementById("currentWord");
+var guessRemain = document.getElementById("guessRemain");
+var lettersGuessed = document.getElementById("lettersGuessed");
+var winCountPara = document.getElementById("winCount");
+const answerArray = [];
+const wrongCharArray = [];
+//const currentWordArray = [];
 var winCount = 0;
+var numGuesses;
+var currentWord;
+var guessKey;
 
-function gameSetup(){
-    const guessRemain = document.getElementById("guessRemain");
-    const currentWordPara = document.getElementById("currentWord");
-    const currentWordArray = [];
+const wordList = ["test", "testy", "tester", "testing", "tested"];
 
-    const currentWord = possibleWords[Math.floor(Math.random() * possibleWords.length)];
-    currentWordArray = Array.from(currentWord);
+//choosen word is replaced with
+function gameSetup() {
+    //resets number of guesses
+    numGuesses = 12;
+    guessRemain.innerHTML = numGuesses;
+    //randomly chooses a word from wordList
+    currentWord = wordList[Math.floor(Math.random() * wordList.length)];
 
-    guessRemain.innerText = 12;
+    for (let i = 0; i < currentWord.length; i++) {
+        answerArray[i] = "__";
+    }
 
-    return currentWordArray;
+    document.getElementById("currentWord").innerHTML = answerArray.join(" ");
+    console.log(currentWord);
 }
 
-function playHangman(){
-    const currentWordPara = document.getElementById("currentWord");
-    const guessRemain = document.getElementById("guessRemain");
-    const lettersGuessed = document.getElementById("lettersGuessed");
-    const winCountPara = document.getElementById("winCount");
-    const currentWordArray = gameSetup();
-    const answerArray = [];
-    const wrongCharArray = [];
-
-    var answerText = "";
-    var wrongChars = "";
-    var numGuesses = 12;
-
-    //populates answerArray
-    for(let i = 0; i < currentWord.length(); i++){
-        answerArray.push("_");
+function checkLetter() {
+  document.onkeyup = function(event) {
+    guessKey = event.key.toLowerCase();
+    for (let i = 0; i < currentWord.length; i++) {
+      if (guessKey === currentWord[i]) {
+        answerArray[i] = guessKey;
+        document.getElementById("currentWord").innerHTML = answerArray.join(" ");
+      }
     }
     
-
-    while(remainingLetters > 0 || numGuesses > 0){ 
-        var guess = event.key;
-
-        //creates current word paragraph with blanks and/or characters
-        for(let i = 0; i < answerArray.length; i++){
-            answerText = answerArray[i] + " ";
+    if(answerArray.includes("__")){
+        //decreases number of guesses if it was an incorrect letter
+        if(!answerArray.includes(guessKey)){
+            numGuesses--;
+            guessRemain.innerHTML = numGuesses;
         }
-        currentWordPara.innerText = answerText;
-
-        //checks for matching characters
-        for(let i = 0; i < answerArray.length; i++){
-            if(guess === currentWordArray[i]){
-                answerArray[i] = guess;
-                remainingLetters--;
-            }
-            else{
-                numGuesses--;
-                guessRemain.innerText = numGuesses;
-                wrongCharArray.push(guess);
-            }
-        }
-
-        //creates list of wrong characters entered
-        for(let i = 0; i < wrongCharArray.length; i++){
-            wrongChars = wrongCharArray[i] + " ";
-        }
-        lettersGuessed.innerText = wrongChars;
     }
-
-    //increases wins once while loop is finished
-    winCount++;
-    winCountPara.innerText = winCount;
+    else{
+        //increases wins once loop is finished if the answer array is filled with letters
+        //FIXME when program ends count increases with every key press
+        winCount++;
+        winCountPara.innerText = winCount;
+    }
+  }
 }
+
+gameSetup();
+checkLetter();
