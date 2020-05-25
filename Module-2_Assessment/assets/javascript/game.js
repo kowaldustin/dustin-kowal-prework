@@ -26,7 +26,7 @@ function gameSetup() {
     wrongCharArray.length = 0;
 
     for (let i = 0; i < currentWord.length; i++) {
-        answerArray[i] = "__";
+        answerArray[i] = "_";
     }
 
     lettersGuessed.innerHTML = wrongCharArray.join(" ");
@@ -45,7 +45,7 @@ function checkLetter() {
     }
 
     //runs when answer array still has blanks
-    if(answerArray.includes("__")){
+    if(answerArray.includes("_")){
         
         //checks if wrong letter is already in each array
         if(!answerArray.includes(guessKey) && !wrongCharArray.includes(guessKey)){
@@ -58,6 +58,7 @@ function checkLetter() {
             guessRemain.innerHTML = numGuesses;
             //starts new game if number of guesses hits 0
             if(numGuesses < 1){
+                parkImg.src = "";
                 newGame();
             }
         }
