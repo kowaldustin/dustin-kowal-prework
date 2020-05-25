@@ -56,6 +56,7 @@ function checkLetter() {
             //decreases number of guesses if it was an incorrect letter
             numGuesses--;
             guessRemain.innerHTML = numGuesses;
+            
             //starts new game if number of guesses hits 0
             if(numGuesses < 1){
                 parkImg.src = "";
