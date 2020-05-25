@@ -4,14 +4,12 @@ var lettersGuessed = document.getElementById("lettersGuessed");
 var winCountPara = document.getElementById("winCount");
 const answerArray = [];
 const wrongCharArray = [];
-//const currentWordArray = [];
 var winCount = 0;
 var numGuesses;
 var currentWord;
 var guessKey;
-var correctLetter = false;
 
-const wordList = ["test", "testy", "tester", "testing", "tested"];
+const wordList = ["yellowstone", "zion", "glacier", "teton", "olympic", "redwood"];
 
 //choosen word is replaced with
 function gameSetup() {
@@ -41,8 +39,7 @@ function checkLetter() {
     for (let i = 0; i < currentWord.length; i++) {
       if (guessKey === currentWord[i]) {
         answerArray[i] = guessKey;
-        currentWordPara.innerHTML = answerArray.join(" ");
-        correctLetter = true;
+        currentWordPara.innerHTML = answerArray.join(" ").toUpperCase();
       }
     }
 
@@ -53,7 +50,7 @@ function checkLetter() {
         if(!answerArray.includes(guessKey) && !wrongCharArray.includes(guessKey)){
 
             wrongCharArray.push(guessKey);
-            lettersGuessed.innerHTML = wrongCharArray.join(" ");
+            lettersGuessed.innerHTML = wrongCharArray.join(" ").toUpperCase();
 
             //decreases number of guesses if it was an incorrect letter
             numGuesses--;
