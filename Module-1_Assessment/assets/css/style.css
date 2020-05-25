@@ -14,7 +14,7 @@ p, label{
 .bgColorWrapper{
     height:84%;
     width:100%;
-    background: #FFFCF8 url("assets/images/triangle-mosaic.png");
+    background: #FFFCF8 url("../images/triangle-mosaic.png");
 }
 .portImgText{
     font-size:12px;
