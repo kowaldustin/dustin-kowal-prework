@@ -3,10 +3,11 @@ body{
     height:100%;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), 
     url("../images/siteBackground.jpg");
+    font-family: 'Inconsolata', monospace;
 }
 .gameContainer{
     width: 60%;
-    height: 600px;
+    height: 500px;
     margin-right:20%;
     margin-left:20%;
     margin-top:5%;
@@ -16,22 +17,32 @@ body{
     text-align:center;
 }
 .titleDiv{
-    height:100px;
+    height:70px;
     width:100%;
     text-align: center;
     font-size:4em;
 }
 .guessInfo{
-    height:500px;
+    height:430px;
     width:50%;
     float:left;
     background-color: #295034;
     border-radius:15px;
 }
 .gameInfo{
-    height:500px;
+    height:430px;
     width:50%;
     float:right;
     background-color: #295034;
     border-radius:15px;
+}
+.infoContainer{
+    margin-top:20%;
+}
+.imgContainer{
+    margin-top:20%;
+}
+#parkImg{
+    height:auto;
+    width:80%;
 }

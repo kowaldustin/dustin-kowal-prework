@@ -6,22 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="gameContainer">
       <div class="titleDiv">
         <h1>National Park Hangman!</h1>
       </div>
-      <div class="guessInfo"></div>
+      <div class="guessInfo">
+        <div class="imgContainer">
+          <img id="parkImg" src="">
+        </div>
+      </div>
       <div class="gameInfo">
-        <p>Wins:</p>
-        <p id="winCount">0</p>
-        <p>Current Word:</p>
-        <p id="currentWord">test</p>
-        <p>Number of Guesses Remaining:</p>
-        <p id="guessRemain">test</p>
-        <p>Letters Already Guessed:</p>
-        <p id="lettersGuessed">test</p>
+        <div class="infoContainer">
+          <p>Wins:</p>
+          <p id="winCount">0</p><br>
+          <p>Current Word:</p>
+          <p id="currentWord">test</p><br>
+          <p>Number of Guesses Remaining:</p>
+          <p id="guessRemain">test</p><br>
+          <p>Letters Already Guessed:</p>
+          <p id="lettersGuessed">test</p>
+        </div>
       </div>
     </div>
     <script type="text/javascript" src="assets/javascript/game.js"></script>

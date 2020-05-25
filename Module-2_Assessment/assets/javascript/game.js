@@ -1,6 +1,7 @@
 var currentWordPara = document.getElementById("currentWord");
 var guessRemain = document.getElementById("guessRemain");
 var lettersGuessed = document.getElementById("lettersGuessed");
+var parkImg = document.getElementById("parkImg");
 var winCountPara = document.getElementById("winCount");
 const answerArray = [];
 const wrongCharArray = [];
@@ -66,15 +67,15 @@ function checkLetter() {
         winCount++;
         winCountPara.innerText = winCount;
 
+        //sets img based on the current word
+        parkImg.src = "assets/images/"+ currentWord + ".jpg";
+        
         newGame();
     }
   }
-    //testCount++;
-    //lettersGuessed.innerHTML = testCount;
 }
 
 newGame();
-
 
 function newGame(){
     gameSetup();
