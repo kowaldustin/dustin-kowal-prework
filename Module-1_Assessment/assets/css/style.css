@@ -11,6 +11,9 @@ p, label{
     height:10%;
     margin-top:-10px;
 }
+#navContainer{
+    height:100%;
+}
 .bgColorWrapper{
     height:84%;
     width:100%;
